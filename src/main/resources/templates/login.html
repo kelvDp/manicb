@@ -4,24 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/styles/login.css}" />
     <title>ManicBurgers</title>
   </head>
   <body>
-    <div class="container">
-      <div class="left">
-        <img th:src="@{/images/burger.jpg}" alt="logo" />
-      </div>
-
-      <div class="right">
-        <h1 class="heading">Welcome to Manic <span>Burgers</span></h1>
+    <div class="login_container">
+      <div class="login_left">
+        <h1 class="login_heading">Please login</h1>
 
         <form th:action="@{/login}" method="post" id="loginForm">
           <input type="text" name="username" placeholder="Username" />
           <input type="password" name="password" placeholder="Password" />
-          <input type="submit" value="Login" class="btn" />
+          <!-- <input type="submit" value="Login" class="login_btn" /> -->
+          <button class="login_btn">Login</button>
         </form>
 
-        <a th:href="@{/register}">Register?</a>
+        <a th:href="@{/register}" class="login_link"
+          >No account? Register here</a
+        >
+      </div>
+
+      <div class="login_right">
+        <img th:src="@{/images/burger.jpg}" alt="logo" class="login_logo" />
       </div>
     </div>
 

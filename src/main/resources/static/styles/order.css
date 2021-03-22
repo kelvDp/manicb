@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .order_container {
+    position: relative;
+    margin: 30px;
+  }
+  
+  h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  h3 {
+    margin-bottom: 10px;
+  }
+  
+  #logoutForm {
+    border-radius: 30px;
+    background-color: yellowgreen;
+    text-decoration: none;
+    padding: 8px;
+    font-size: 14px;
+    width: 60px;
+    text-align: center;
+  }
+  
+  #logoutForm button {
+    border: none;
+    background-color: yellowgreen;
+    color: white;
+  }
+
+  .order_link {
+    border-radius: 30px;
+    background-color: red;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 14px;
+    width: 60px;
+    text-align: center;
+    color: white;
+  }
+
+  ul {
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+
+  .info {
+      margin-bottom: 2px;
+  }
+    
+  .btn {
+    margin-bottom: 15px;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+    border-style: none;
+    padding: 8px;
+    font-size: 14px;
+  }
+  

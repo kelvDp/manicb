@@ -4,15 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/styles/home.css}" />
     <title>ManicBurgers</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Welcome</h1>
-      <!-- <img th:src="@{/images/burger.jpg}" alt="logo" /> -->
-      <img src="../static/images/" alt="logo" />
-
-      <a th:href="@{/burgers}">Design a burger</a>
+    <div class="home_container">
+      <div class="home_left">
+        <h1 class="home_heading">Welcome to Manic Burgers!</h1>
+        <a th:href="@{/burgers}" class="home_link">Build your burger now</a>
+      </div>
+      <div class="home_right">
+        <img th:src="@{/images/burger.jpg}" alt="logo" class="home_logo" />
+      </div>
     </div>
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
   </body>
 </html>

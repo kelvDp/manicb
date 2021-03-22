@@ -4,15 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/styles/order.css}" />
     <title>ManicBurgers</title>
   </head>
   <body>
-    <div class="container">
+    <div class="order_container">
       <h1>Ready to checkout?</h1>
-
-      <form th:action="@{/logout}" method="post" id="logoutForm">
-        <input type="submit" value="Logout" />
-      </form>
 
       <form
         th:action="@{/orders}"
@@ -20,7 +17,7 @@
         th:object="${order}"
         id="orderForm"
       >
-        <a th:href="@{/burgers}" id="another">Why not create one more?</a>
+        <a th:href="@{/burgers}" class="order_link">Why not create one more?</a>
 
         <ul>
           <li th:each="item : ${order.burgers}">
@@ -30,49 +27,69 @@
 
         <h3>Your details</h3>
 
-        <label for="personName">Name: </label>
-        <input type="text" th:field="*{personName}" />
+        <div class="info">
+          <label for="personName">Name: </label>
+          <input type="text" th:field="*{personName}" />
+        </div>
 
         <br />
 
-        <label for="street">Address: </label>
-        <input type="text" th:field="*{street}" />
+        <div class="info">
+          <label for="street">Address: </label>
+          <input type="text" th:field="*{street}" />
+        </div>
 
         <br />
 
-        <label for="city">City: </label>
-        <input type="text" th:field="*{city}" />
+        <div class="info">
+          <label for="city">City: </label>
+          <input type="text" th:field="*{city}" />
+        </div>
 
         <br />
 
-        <label for="state">State: </label>
-        <input type="text" th:field="*{state}" />
+        <div class="info">
+          <label for="state">State: </label>
+          <input type="text" th:field="*{state}" />
+        </div>
 
         <br />
 
-        <label for="zip">Zip code: </label>
-        <input type="text" th:field="*{zip}" />
+        <div class="info">
+          <label for="zip">Zip code: </label>
+          <input type="text" th:field="*{zip}" />
+        </div>
 
         <br />
 
         <h3>Payment</h3>
 
-        <label for="ccNumber">Credit card #: </label>
-        <input type="text" th:field="*{ccNumber}" />
+        <div class="info">
+          <label for="ccNumber">Credit card #: </label>
+          <input type="text" th:field="*{ccNumber}" />
+        </div>
 
         <br />
 
-        <label for="ccExpiration">Expiration: </label>
-        <input type="text" th:field="*{ccExpiration}" />
+        <div class="info">
+          <label for="ccExpiration">Expiration: </label>
+          <input type="text" th:field="*{ccExpiration}" />
+        </div>
 
         <br />
 
-        <label for="ccCVV">CVV: </label>
-        <input type="text" th:field="*{ccCVV}" />
+        <div class="info">
+          <label for="ccCVV">CVV: </label>
+          <input type="text" th:field="*{ccCVV}" />
+        </div>
 
         <br />
 
-        <input type="submit" value="Submit Order" />
+        <button class="btn">Submit Order</button>
+      </form>
+
+      <form th:action="@{/logout}" method="post" id="logoutForm">
+        <button>Logout</button>
       </form>
     </div>
     <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
