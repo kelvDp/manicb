@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/styles/success.css}">
+    <title>ManicBurgers</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank you for ordering!</h1>
+        <h4>Your order was placed successfully</h4>
+        <a th:href="@{/burgers}">Want one more?</a>
+        <img th:src="@{/images/successs.png}" alt="img">
+    </div>
+</body>
+</html>

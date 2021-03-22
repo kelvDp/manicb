@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.register_container {
+    position: relative;
+    margin: 30px;
+}
+
+.register_detail-area {
+    position: absolute;
+    left: 80px;
+    top: 20px;
+}
+
+.register_detail-area h1 {
+    font-size: 35px;
+}
+
+.register_detail-area .register_link{
+    border-radius: 30px;
+    background-color: yellowgreen;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.register_detail-area input {
+    display: block;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.register_detail-area .register_btn {
+    margin-bottom: 15px;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+    border-style: none;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.register_right {
+    position: absolute;
+    right: 0;
+}
+
+.register_right .register_logo {
+    width: 525px;
+    height: 525px;
+}

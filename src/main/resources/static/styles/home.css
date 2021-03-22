@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home_container {
+    position: relative;
+    margin: 30px;
+}
+
+.home_left {
+    position: absolute;
+    left: 50px;
+    top: 180px;
+    text-align: center;
+}
+
+.home_left .home_heading {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.home_left .home_link{
+    margin-top: 50px;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.home_right {
+    position: absolute;
+    right: 0;
+}
+
+.home_right .home_logo {
+    width: 525px;
+    height: 525px;
+}

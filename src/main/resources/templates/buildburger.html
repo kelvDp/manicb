@@ -4,20 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/styles/build.css}" />
     <title>ManicBurgers</title>
   </head>
 
   <body>
-    <div class="container">
+    <div class="build_container">
       <h1>Build your burger!</h1>
-      <img th:src="@{/images/burger.jpg}" alt="logo" />
 
-      <form th:action="@{/logout}" method="post" id="logoutForm">
-        <input type="submit" value="Logout" />
-      </form>
-
-      <div class="boxes">
-        <form th:object="${burger}" th:action="@{/burgers}" method="post" id="burgermenu">
+      <div class="build_boxes">
+        <form
+          th:object="${burger}"
+          th:action="@{/burgers}"
+          method="post"
+          id="burgermenu"
+        >
           <div class="grid">
             <div class="ingredients" id="buns">
               <h3>Choose your roll</h3>
@@ -78,14 +79,18 @@
                 <span th:text="${item.name}">Name</span>
               </div>
             </div>
-
-            <div>
-              <h3>Give your burger a name:</h3>
-              <input type="text" th:field="*{name}">
-            </div>
-
-            <button>Submit</button>
           </div>
+
+          <div class="name-box">
+            <h3>Give your burger a name:</h3>
+            <input type="text" th:field="*{name}" />
+          </div>
+
+          <button class="btn">Submit</button>
+        </form>
+
+        <form th:action="@{/logout}" method="post" id="logoutForm">
+          <button>Logout</button>
         </form>
       </div>
     </div>

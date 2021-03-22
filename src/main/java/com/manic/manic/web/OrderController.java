@@ -62,6 +62,6 @@ public class OrderController {
 
         sessionStatus.setComplete();
 
-        return "redirect:/";
+        return "success";
     }
 }
