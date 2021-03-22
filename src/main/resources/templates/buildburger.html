@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ManicBurgers</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Build your burger!</h1>
+      <img th:src="@{/images/burger.jpg}" alt="logo" />
+
+      <form th:action="@{/logout}" method="post" id="logoutForm">
+        <input type="submit" value="Logout" />
+      </form>
+
+      <div class="boxes">
+        <form th:object="${burger}" th:action="@{/burgers}" method="post" id="burgermenu">
+          <div class="grid">
+            <div class="ingredients" id="buns">
+              <h3>Choose your roll</h3>
+              <div th:each="item : ${roll}">
+                <input
+                  type="checkbox"
+                  name="ingredients"
+                  th:value="${item.id}"
+                />
+                <span th:text="${item.name}">Name</span>
+              </div>
+            </div>
+
+            <div class="ingredients" id="proteins">
+              <h3>Choose your meat</h3>
+              <div th:each="item : ${protein}">
+                <input
+                  type="checkbox"
+                  name="ingredients"
+                  th:value="${item.id}"
+                />
+                <span th:text="${item.name}">Name</span>
+              </div>
+            </div>
+
+            <div class="ingredients" id="veggies">
+              <h3>What about some veg?</h3>
+              <div th:each="item : ${veggies}">
+                <input
+                  type="checkbox"
+                  name="ingredients"
+                  th:value="${item.id}"
+                />
+                <span th:text="${item.name}">Name</span>
+              </div>
+            </div>
+
+            <div class="ingredients" id="cheeses">
+              <h3>You definitely have to get some cheese!</h3>
+              <div th:each="item : ${cheese}">
+                <input
+                  type="checkbox"
+                  name="ingredients"
+                  th:value="${item.id}"
+                />
+                <span th:text="${item.name}">Name</span>
+              </div>
+            </div>
+
+            <div class="ingredients" id="sauces">
+              <h3>And obviously sauce</h3>
+              <div th:each="item : ${sauce}">
+                <input
+                  type="checkbox"
+                  name="ingredients"
+                  th:value="${item.id}"
+                />
+                <span th:text="${item.name}">Name</span>
+              </div>
+            </div>
+
+            <div>
+              <h3>Give your burger a name:</h3>
+              <input type="text" th:field="*{name}">
+            </div>
+
+            <button>Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+  </body>
+</html>

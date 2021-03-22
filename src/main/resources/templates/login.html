@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="eng" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ManicBurgers</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <img th:src="@{/images/burger.jpg}" alt="logo" />
+      </div>
+
+      <div class="right">
+        <h1 class="heading">Welcome to Manic <span>Burgers</span></h1>
+
+        <form th:action="@{/login}" method="post" id="loginForm">
+          <input type="text" name="username" placeholder="Username" />
+          <input type="password" name="password" placeholder="Password" />
+          <input type="submit" value="Login" class="btn" />
+        </form>
+
+        <a th:href="@{/register}">Register?</a>
+      </div>
+    </div>
+
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+  </body>
+</html>

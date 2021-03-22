@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ManicBurgers</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="detail-area">
+        <h1>Please fill in your details below.</h1>
+        <form th:action="@{/register}" method="post" id="registerForm">
+          <label for="fullName">Full name</label>
+          <input type="text" name="fullName" />
+          <label for="username">Username</label>
+          <input type="text" name="username" />
+          <label for="password">Password</label>
+          <input type="password" name="password" />
+          <label for="street">Street</label>
+          <input type="text" name="street" />
+          <label for="city">City</label>
+          <input type="text" name="city" />
+          <label for="state">State</label>
+          <input type="text" name="state" />
+          <label for="zip">Zip Code</label>
+          <input type="text" name="zip" />
+          <label for="number">Number</label>
+          <input type="text" name="number" />
+
+          <input type="submit" value="Register" />
+        </form>
+      </div>
+    </div>
+
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+  </body>
+</html>
